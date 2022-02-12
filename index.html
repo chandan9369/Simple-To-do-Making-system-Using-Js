@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <h3>Some Commands to make todo in this builtin todo</h3>
+    <b><i>Menu of commands</i></b>
+    <ol>
+      <li>
+        <b>new</b>&nbsp - &nbsp this command is used to add new element to this
+        todo
+      </li>
+      <li><b>list</b>&nbsp - &nbsp this command is used to print todo</li>
+      <li>
+        <b>delete</b>&nbsp - &nbsp this command is used to delete element at
+        particular index in a todo list todo
+      </li>
+      <li>
+        <b>quit</b>&nbsp - &nbsp this command is used to quit to the todo list
+        system todo
+      </li>
+    </ol>
+    <script>
+      // welcome to todo project
+      console.log(`\n \t~~~~~  Welcome to this todo system  ~~~~~`);
+
+      function NewToList(arr, value) {
+        arr.push(value);
+      }
+      function PrintList(arr) {
+        console.log(`\n \t~~~~~~ Printing The List ~~~~~~`);
+        for (let i = 0; i < arr.length; i++) {
+          console.log(`${i} ---> ${arr[i]}`);
+        }
+      }
+
+      function DeleteFromList(arr, index) {
+        for (let i = index; i < arr.length; i++) {
+          arr[i] = arr[i + 1];
+        }
+        arr.pop();
+      }
+      let userInput = prompt("Enter Your command : ");
+      let arr = [];
+      while (userInput !== "quit") {
+        userInput = prompt("Enter Your command : ");
+        if (userInput === "new") {
+          let value = prompt("Enter your todo element : ");
+          NewToList(arr, value);
+        } else if (userInput === "list") {
+          PrintList(arr);
+          console.log("\n");
+        } else if (userInput === "delete") {
+          let index = prompt("Enter element index to be deleted");
+          DeleteFromList(arr, index);
+        }
+      }
+      console.log("Thanks For using this system");
+    </script>
+  </body>
+</html>
