@@ -40,14 +40,11 @@
       }
 
       function DeleteFromList(arr, index) {
-        for (let i = index; i < arr.length; i++) {
-          arr[i] = arr[i + 1];
-        }
-        arr.pop();
+        arr.splice(index, 1);
       }
       let userInput = prompt("Enter Your command : ");
       let arr = [];
-      while (userInput !== "quit") {
+      while (userInput !== "quit" || userInput !== "q") {
         userInput = prompt("Enter Your command : ");
         if (userInput === "new") {
           let value = prompt("Enter your todo element : ");
