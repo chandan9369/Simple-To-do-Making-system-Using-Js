@@ -54,6 +54,10 @@
           console.log("\n");
         } else if (userInput === "delete") {
           let index = prompt("Enter element index to be deleted");
+          if (!Number.isNaN(index)) {
+            console.log("Can not delete as input index is not a number");
+            continue;
+          }
           DeleteFromList(arr, index);
         }
       }
